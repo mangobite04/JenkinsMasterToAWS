@@ -16,6 +16,7 @@ pass=`sudo cat /var/lib/jenkins/secrets/initialAdminPassword` && echo 'jenkins.m
 java -jar /var/cache/jenkins/war/WEB-INF/jenkins-cli.jar -auth admin:$pass -s http://"$var1":8080/ install-plugin EC2
 service jenkins restart'''
 
+# Instance Creation and Tagging
 instance = ec2.create_instances(
 	ImageId='ami-08935252a36e25f85', 
 	MinCount=1, 
