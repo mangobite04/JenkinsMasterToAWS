@@ -17,6 +17,7 @@ java -jar /var/cache/jenkins/war/WEB-INF/jenkins-cli.jar -auth admin:$pass -s ht
 service jenkins restart'''
 
 # Instance Creation and Tagging
+# Instance Security Group
 instance = ec2.create_instances(
 	ImageId='ami-08935252a36e25f85', 
 	MinCount=1, 
